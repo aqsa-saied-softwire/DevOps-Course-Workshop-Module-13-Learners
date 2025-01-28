@@ -28,7 +28,7 @@ def index():
     recently_placed_count = get_recently_placed_count()
     recently_processed_count = get_recently_processed_count()
     scenarios = [
-        { 'display': 'Add broken order', 'value': 'BrokenOrder' },
+        { 'display': 'Add broken orderfsdss', 'value': 'BrokenOrder' },
         { 'display': 'Monitoring Load', 'value': 'HighLoad' },
         { 'display': 'Queue Reliability', 'value': 'UnreliableProcessing' },
         { 'display': 'System Monitoring', 'value': 'VeryHighLoad' },
