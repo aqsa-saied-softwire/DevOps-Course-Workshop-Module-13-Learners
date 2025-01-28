@@ -7,11 +7,9 @@ from scheduled_jobs import initialise_scheduled_jobs
 from products import create_product_download
 import requests
 
-from azure.monitor.opentelemetry import configure_azure_monitor
 import logging
 
 logging.basicConfig(level=logging.INFO)
-configure_azure_monitor()
 
 from flask import Flask, render_template, request
 app = Flask(__name__)
