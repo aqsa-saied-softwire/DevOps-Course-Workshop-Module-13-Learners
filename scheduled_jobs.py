@@ -1,4 +1,4 @@
-from data.database import save_order, get_all_orders
+from data.database import save_order, get_all_not_failed_orders
 from products import create_product_download
 from apscheduler.schedulers.background import BackgroundScheduler
 import requests
@@ -45,7 +45,7 @@ def process_orders(app):
             app.logger.exception("Error processing order {id}".format(id = order.id))
 
 def get_queue_of_orders_to_process():
-    allOrders = get_all_orders()
+    allOrders = get_all_not_failed_orders()
     queuedOrders = filter(lambda order: order.date_processed == None, allOrders)
     sortedQueue = sorted(queuedOrders, key= lambda order: order.date_placed)
     return list(sortedQueue)

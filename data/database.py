@@ -11,6 +11,9 @@ from data.order import Order, QUEUED
 def get_all_orders():
     return db.session.query(Order).all()
 
+def get_all_not_failed_orders():
+    return db.session.query(Order).filter(Order.status != 'Failed').all()
+
 def get_orders_to_display():
     return (db.session.query(Order)
         .filter(or_(Order.date_processed == None, Order.date_processed >= _display_cutoff()))
