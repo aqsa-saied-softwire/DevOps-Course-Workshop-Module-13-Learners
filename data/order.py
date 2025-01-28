@@ -45,3 +45,5 @@ class Order(db.Model):
     def set_as_failed(self):
         self.date_processed = datetime.now(tz=utc)
         self.status = FAILED
+        app.logger.info("set to failed", self)
+
