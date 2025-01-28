@@ -74,7 +74,7 @@
             <p>Customer:<b> {{ order.customer }}</b></p>
             <p>Product: <b>{{ order.product }}</b></p>
             <p>Placed: <b>{{ order.date_placed_local.strftime('%d/%m/%Y %H:%M:%S') }}</b></p>
-            <p style="background-color: red;">Processed: <b>{{ "Failed" if order.status == "Failed" else (order.date_processed_local.strftime('%d/%m/%Y %H:%M:%S') if order.date_processed else None)}}</b></p>
+            <p>Processed: <b>{{ Failed if order.status == "Failed" else (order.date_processed_local.strftime('%d/%m/%Y %H:%M:%S') if order.date_processed else None) }}</b></p>
           </li>
           {% endfor %}
         </ul>
